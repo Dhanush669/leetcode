@@ -4,7 +4,8 @@ class Solution:
         p=[]
         for i in trust:
             p.append(i[0])
-            li.append(i[1])   
+            li.append(i[1])  
+        
         for i in range(1,n+1):
             if li.count(i)==n-1 and i not in p:
                 return i
