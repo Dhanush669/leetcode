@@ -7,7 +7,11 @@ class Solution:
     def helper(self,root,level,dic):
         if root==None:
             return
-        dic[level].append(root.data)
+        if len(dic[level])==0:
+            dic[level].append(root.data)
+        else:
+            if dic[level][0]<root.data:
+                dic[level][0]=root.data
         self.helper(root.left,level+1,dic)
         self.helper(root.right,level+1,dic)
         return dic
@@ -19,9 +23,11 @@ class Solution:
         dic=self.helper(root,0,dic)
         for i in dic:
             #print(i,self.dic[i])
-            maxlis.append(max(dic[i]))
+            # maxlis.append(max(dic[i]))
+            maxlis.append(dic[i][0])
         #print(maxlis)    
         return maxlis
+        
         
             
 
