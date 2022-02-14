@@ -3,8 +3,42 @@ from collections import defaultdict
 class Solution:
     def findTwoElement( self,arr, n): 
         # code here
+        # dic=defaultdict(list)
+        # arr.sort()
+        # for i in range(1,len(arr)+1):
+        #     #if i in arr:
+        #     dic[arr[i-1]].append(arr[i-1])
+            
+        # op=[]    
+        # first=False
+        # # for i in dic:
+        # #     #print(i,dic[i])
+        # #     if len(dic[i])>1:
+        # #         op.append(i)
+        # #         break
+        
+        # for i in range(1,len(arr)+1):
+        #     #print(i,dic[i])
+        #     if len(dic[i])>1:
+        #         op.append(i)
+        #     if len(dic[i])==0:
+        #         if len(op)==0:
+        #             first=True
+        #         op.append(i)
+        #     if len(op)==2:    
+        #         break
+        
+        # # for i in range(1,len(arr)+1):
+        # #     #print(i,dic[i])
+        # #     if len(dic[i])==0:
+        # #         op.append(i)
+        # #         break
+        # if first:
+        #     return op[::-1]
+        # return op   
+        
         dic=defaultdict(list)
-        arr.sort()
+        #arr.sort()
         for i in range(1,len(arr)+1):
             #if i in arr:
             dic[arr[i-1]].append(arr[i-1])
@@ -35,7 +69,11 @@ class Solution:
         #         break
         if first:
             return op[::-1]
-        return op   
+        return op
+        
+        
+        
+        
 
 #{ 
 #  Driver Code Starts
