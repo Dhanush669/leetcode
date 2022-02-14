@@ -10,17 +10,31 @@ class Solution:
             dic[arr[i-1]].append(arr[i-1])
             
         op=[]    
-        for i in dic:
+        first=False
+        # for i in dic:
+        #     #print(i,dic[i])
+        #     if len(dic[i])>1:
+        #         op.append(i)
+        #         break
+        
+        for i in range(1,len(arr)+1):
             #print(i,dic[i])
             if len(dic[i])>1:
                 op.append(i)
-                break
-        for i in range(1,len(arr)+1):
-            #print(i,dic[i])
             if len(dic[i])==0:
+                if len(op)==0:
+                    first=True
                 op.append(i)
+            if len(op)==2:    
                 break
-           
+        
+        # for i in range(1,len(arr)+1):
+        #     #print(i,dic[i])
+        #     if len(dic[i])==0:
+        #         op.append(i)
+        #         break
+        if first:
+            return op[::-1]
         return op   
 
 #{ 
