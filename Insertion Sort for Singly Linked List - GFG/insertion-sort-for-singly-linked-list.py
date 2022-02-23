@@ -23,8 +23,11 @@ class Solution:
         #code here
         
         t=head.next
+        prev=head
         while t!=None:
-            self.helper(head,t)
+            if t.data<prev.data:
+                self.helper(head,t)
+            prev=t    
             t=t.next
         return head    
 
