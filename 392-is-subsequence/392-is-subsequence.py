@@ -11,11 +11,13 @@ class Solution:
                 pos.append(t.index(i))
             else:
                 pos.append(t.index(i)+f)
-            f+= len(t[:t.index(i)])  +1  
+            f+= len(t[:t.index(i)])  +1
+            if f<pos[-1]:
+                return False
             t=t[t.index(i)+1:]
         #print(pos)    
-        for i in range(0,len(pos)-1)    :
-            if pos[i]>pos[i+1]:
-                return False
+        # for i in range(0,len(pos)-1)    :
+        #     if pos[i]>pos[i+1]:
+        #         return False
         return True    
         
