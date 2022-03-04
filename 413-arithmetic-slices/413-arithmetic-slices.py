@@ -6,39 +6,46 @@ class Solution:
         if len(nums)<3:
             return 0
         a1=nums[0]
-        inc=0
+        inc=1
         po=2
         d=nums[1]-a1
-        for i in range(1,len(nums)-1):
+        for i in range(2,len(nums)):
             
-            if nums[i]-nums[i-1] == nums[i+1] - nums[i]:
-                inc+=1
-                res+=inc
-                
-            else:
-                inc=0
-                
-            
-#             n_1=po
-            
-#             po+=1
-#             an=a1+(n_1*d)
-#             print(n_1,"m-1",an,nums[i])
-#             if an==nums[i]:
-#                 res+=inc
+#             if nums[i]-nums[i-1] == nums[i+1] - nums[i]:
 #                 inc+=1
+#                 res+=inc
+                
 #             else:
-#                 s=len(nums[i:])
-#                 print(s)
-#                 if s<3:
-#                     #print(len(nums[i:]),nums[i:])
-#                     break
-                    
-#                 a1=nums[i]
-#                 d=nums[i+1]-a1     
 #                 inc=0
-#                 po=1
-#                 print(a1,d,po)
+                
+            
+            n_1=po
+            
+            po+=1
+            an=a1+(n_1*d)
+            print(n_1,"m-1",an,nums[i],res)
+            if an==nums[i]:
+                res+=inc
+                inc+=1
+            else:
+                s=len(nums[i:])
+                #print(nums[i],len(nums[i:]),nums[i:])
+                if s<2:
+                    
+                    break
+                if s==2:
+                    a1=nums[i-1]
+                    d=nums[i]-nums[i-1]
+                    inc=1
+                    po=2
+                    print(a1,d)
+                else:    
+                    
+                    a1=nums[i]
+                    d=nums[i+2]-nums[i+1]    
+                    inc=0
+                    po=1
+                    #print(a1,d,po)
                 
         # for i in range(0,len(nums)-2)    :
         #     for j in range(len(nums),2,-1):
