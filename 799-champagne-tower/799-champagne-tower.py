@@ -6,7 +6,7 @@ class Solution:
             if poured==1:
                 return 1.00000
             return 0.00000
-        lis=[[0]*i for i in range(1,102)]
+        lis=[[0]*i for i in range(1,query_row+5)]
         lis[0][0]=poured
         for i in range(query_row+1):
             for j in range(i+1):
