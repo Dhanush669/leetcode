@@ -4,12 +4,11 @@ class Solution:
         return 0
     
     def containsDuplicate(self, nums: List[int]) -> bool:
-        dic=defaultdict(self.defa)
+        
+        dic=set()
         for i in nums:
-            if dic[i]>=1:
+            
+            if i in dic:
                 return True
-            dic[i]+=1
-        # for val in dic:
-        #     if dic[val]>1:
-        #         return True
+            dic.add(i)
         return False    
